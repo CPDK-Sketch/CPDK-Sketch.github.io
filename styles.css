@@ -778,97 +778,164 @@ button:hover {
     }
 /* Prevent Horizontal Scrolling */
 body, html {
+    margin: 0;
+    padding: 0;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
 }
 
-/* Mobile Devices (up to 600px) */
+/* Apply a max-width on the container to avoid overflow */
+.container {
+    max-width: 100%;
+    padding: 0 10px; /* Add some padding to prevent elements from touching edges */
+    box-sizing: border-box;
+}
+
+/* General styles for sections */
+section {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* Mobile View - up to 600px */
 @media (max-width: 600px) {
-    body {
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Adjust container for mobile */
-    .container {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 10px; /* Padding to prevent elements from touching the edges */
-    }
-
-    /* Stack About Me section vertically and remove fixed width */
+    /* Fix the About Me container from hiding part of the image */
     .about-me {
-        flex-direction: column; /* Stack items vertically */
-        gap: 20px;
-        width: 100%; /* Full width */
-        text-align: center; /* Center the content */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
     }
 
-    /* Make sure profile image is responsive */
+    /* Adjust the About Me image */
     .about-me-image {
         width: 200px;
         height: 200px;
-        object-fit: cover; /* Prevent stretching */
+        object-fit: cover;
         margin: 0 auto;
     }
 
-    /* Fix skills section layout */
+    /* Skills Section fix */
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns layout for mobile */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
         gap: 10px; /* Space between skills */
+        padding: 0 10px;
     }
 
-    /* Fix overlapping cards (e.g. experience and flip-cards) */
+    /* Adjust Professional Experience card sizes */
     .experience-card, .flip-card {
         width: 100%; /* Make cards full width */
-        margin-bottom: 20px; /* Space between cards */
+        margin-bottom: 20px;
+        padding: 10px;
+        box-sizing: border-box;
     }
 
-    /* Ensure the footer adjusts properly */
-    footer {
-        padding: 10px 20px;
-        text-align: center; /* Center footer content */
-    }
-
-    /* Fix Navbar */
+    /* Nav Menu Fix */
     nav ul {
-        flex-direction: column; /* Stack navbar items vertically */
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
         padding: 0;
         margin: 0;
+        width: 100%;
     }
 
     nav ul li {
-        text-align: center; /* Center navbar items */
-        padding: 10px 0; /* Add space between links */
+        padding: 10px 0;
+        width: 100%;
+        text-align: center; /* Center nav items */
     }
 
-    /* Contact details stack vertically */
+    /* Fix container overflow */
+    .container {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    /* About Me Section */
+    .about-me-text {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    /* Contact Details */
     .contact-details {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    /* Prevent black space on the left */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ensure the page has no horizontal overflow */
+    body, html {
+        overflow-x: hidden;
     }
 }
 
-/* Tablets (up to 768px) */
+/* Tablet View - up to 768px */
 @media (max-width: 768px) {
+    /* Adjust container width */
     .container {
-        width: 90%;
+        width: 95%;
     }
 
-    /* Adjust about me image size */
+    /* About Me image */
     .about-me-image {
         width: 250px;
         height: 250px;
     }
 
-    /* Ensure Skills are not overcrowded */
+    /* Skills Section */
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Ensure cards don't overflow */
+    /* Cards - Professional Experience */
     .experience-card, .flip-card {
         width: 100%;
         margin-bottom: 15px;
+    }
+
+    /* Navigation Menu */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        padding: 15px 0;
+        text-align: center;
+    }
+}
+
+/* Desktop View - from 768px and above */
+@media (min-width: 769px) {
+    /* Skills grid for large screens */
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Experience cards */
+    .experience-card, .flip-card {
+        width: 23%; /* Adjust the width of cards to 4 per row */
+        margin-bottom: 20px;
     }
 }
