@@ -12,8 +12,19 @@ body {
     margin: 0;
     padding: 0;
 }
-
+@media (max-width: 600px) {
+    body {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
 .container {
+    
     width: 150%;
     margin: 50px auto;
     text-align: center;
@@ -776,3 +787,73 @@ button:hover {
             opacity: 1;
         }
     }
+
+    /* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%; /* Full width container */
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Smaller heading */
+    }
+
+    .about-me {
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px;
+    }
+
+    .about-me-image {
+        width: 200px;
+        height: 200px; /* Resize the profile image */
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+
+    .experience-card, .flip-card {
+        width: 100%; /* Full-width cards */
+    }
+
+    footer {
+        padding: 10px 20px;
+    }
+
+    .contact-details {
+        flex-direction: column; /* Stack contact details */
+    }
+}
+
+/* Tablets (up to 768px) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navbar items */
+    }
+
+    .container {
+        width: 90%; /* Slightly smaller container */
+    }
+
+    .about-me {
+        gap: 30px;
+    }
+
+    .about-me-image {
+        width: 250px;
+        height: 300px; /* Resize image */
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    }
+
+    .flip-card {
+        width: 80%; /* Cards at 80% width */
+    }
+}
