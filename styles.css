@@ -926,16 +926,3 @@ section {
     }
 }
 
-/* Desktop View - from 768px and above */
-@media (min-width: 769px) {
-    /* Skills grid for large screens */
-    .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    /* Experience cards */
-    .experience-card, .flip-card {
-        width: 23%; /* Adjust the width of cards to 4 per row */
-        margin-bottom: 20px;
-    }
-}
