@@ -857,3 +857,67 @@ button:hover {
         width: 80%; /* Cards at 80% width */
     }
 }
+
+/* Desktop View - Ensures sections take full width */
+@media (min-width: 769px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px; /* Add some padding for better spacing */
+  }
+  .experience, .about, .skills {
+    width: 100%; /* Ensure full width on desktop */
+  }
+}
+
+/* Mobile View - Responsive layout */
+@media (max-width: 768px) {
+  /* Ensure the container takes full width in mobile */
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Navigation Menu - Make it a dropdown in mobile */
+  .navbar {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .navbar a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Skills Icons - Make them smaller on mobile */
+  .skills-icon {
+    width: 30px; /* Adjust the icon size */
+    height: 30px;
+  }
+
+  /* Ensure no content is cut off */
+  .about {
+    overflow: visible; /* Remove any overflow hiding */
+  }
+
+  /* Make sure the experience section is full width on mobile */
+  .experience {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Hide the original nav and show dropdown */
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block; /* Make hamburger visible on mobile */
+  }
+}
