@@ -776,72 +776,99 @@ button:hover {
             opacity: 1;
         }
     }
+/* Prevent Horizontal Scrolling */
+body, html {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 /* Mobile Devices (up to 600px) */
 @media (max-width: 600px) {
     body {
-        padding: 10px;
+        padding: 0;
+        margin: 0;
     }
 
+    /* Adjust container for mobile */
     .container {
-        width: 100%; /* Full width container */
-        margin: 20px auto;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 10px; /* Padding to prevent elements from touching the edges */
     }
 
-    h1 {
-        font-size: 1.5rem; /* Smaller heading */
-    }
-
+    /* Stack About Me section vertically and remove fixed width */
     .about-me {
         flex-direction: column; /* Stack items vertically */
         gap: 20px;
+        width: 100%; /* Full width */
+        text-align: center; /* Center the content */
     }
 
+    /* Make sure profile image is responsive */
     .about-me-image {
         width: 200px;
-        height: 200px; /* Resize the profile image */
+        height: 200px;
+        object-fit: cover; /* Prevent stretching */
+        margin: 0 auto;
     }
 
+    /* Fix skills section layout */
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        grid-template-columns: repeat(2, 1fr); /* Two columns layout for mobile */
+        gap: 10px; /* Space between skills */
     }
 
+    /* Fix overlapping cards (e.g. experience and flip-cards) */
     .experience-card, .flip-card {
-        width: 100%; /* Full-width cards */
+        width: 100%; /* Make cards full width */
+        margin-bottom: 20px; /* Space between cards */
     }
 
+    /* Ensure the footer adjusts properly */
     footer {
         padding: 10px 20px;
+        text-align: center; /* Center footer content */
     }
 
+    /* Fix Navbar */
+    nav ul {
+        flex-direction: column; /* Stack navbar items vertically */
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        text-align: center; /* Center navbar items */
+        padding: 10px 0; /* Add space between links */
+    }
+
+    /* Contact details stack vertically */
     .contact-details {
-        flex-direction: column; /* Stack contact details */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 }
 
 /* Tablets (up to 768px) */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack navbar items */
-    }
-
     .container {
-        width: 90%; /* Slightly smaller container */
+        width: 90%;
     }
 
-    .about-me {
-        gap: 30px;
-    }
-
+    /* Adjust about me image size */
     .about-me-image {
         width: 250px;
-        height: 300px; /* Resize image */
+        height: 250px;
     }
 
+    /* Ensure Skills are not overcrowded */
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .flip-card {
-        width: 80%; /* Cards at 80% width */
+    /* Ensure cards don't overflow */
+    .experience-card, .flip-card {
+        width: 100%;
+        margin-bottom: 15px;
     }
 }
